@@ -1,0 +1,56 @@
+#include <iostream>
+#include<string.h>
+#define number 1000000007
+using namespace std;
+
+long long int gcdcalc(long long int a,long long int b)
+{
+	
+	while(a!=b)
+	{
+		if(a>b)
+		a-=b;
+		else
+		b-=a;
+	}
+	return a;
+	
+}
+int main() {
+	long long int tq,num,product,a,result,i,j,k,arr[100001];
+	cin>>tq;
+	while(tq>0)
+	{
+		memset(arr,0,sizeof(arr));
+		product=1;
+		cin>>num;
+		for(i=0;i<n;i++)
+		{
+		cin>>arr[i];
+		product=(product*arr[i])%number;
+		}
+		for(i=0;i<n;i++)
+		{	
+			
+			for(j=i+1;j<n;j++)
+			{
+			if(i+1<num)
+			res=arr[i];
+			else
+			result=1;
+				for(k=i+1;k<=j;k++)
+				{
+				res=gcdcalc(result,arr[k]);
+				}
+ 
+			product=(product*result)%number;	
+			}
+			
+			
+		}
+		cout<<product<<endl;
+		tq--;
+	}
+	return 0;
+} 
+ 

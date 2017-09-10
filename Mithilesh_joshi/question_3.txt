@@ -1,0 +1,53 @@
+    first=input()
+    while first>0:
+    	first-=1
+    	n=input()
+    	b=raw_input()
+    	b=b.split(" ")
+    	an=raw_input()
+    	an=an.split(" ")
+     
+    	for i in range(n):
+    		d[i]=(int)(d[i])
+    	a=(int)(an[0])
+	b=(int)(an[1])
+    	c=(int)(an[2])
+    	
+    	s1=raw_input()
+    	curr=0
+    	l1=0
+    	r1=n-1
+    	rev=0
+    	add=0
+    	mult=1
+    	for i in range(n):
+    		if s1[i]=='R':
+			#print "Reversed array"
+    			if rev:
+    				rev=0
+    				r1=curr
+    				curr=l1
+    			else:
+    				rev=1
+    				l1=curr
+    				curr=r1
+    		elif s1[i]=='A':
+			#print "adding numbers"
+    			add=((a%c)+(add%c))%c
+    		
+		elif s1[i]=='M':
+			
+			#print "adding numbers"
+    			
+			mult=((mult%c)*(b%c))%c
+    			add=((add%c)*(b%c))%c
+    		print ((d[curr]*mult)%c+add)%c,
+    		if rev:
+    			curr-=1
+    			r-=1
+    		else:
+    			curr+=1
+    			l+=1
+    	print('')
+     
+     
